@@ -1,0 +1,95 @@
+{
+  "fictional": true,
+  "description": "Fictional CGM metrics for pipeline demos only. Not a real report and not a real wearer.",
+  "wearer_key": "fictional-wearer-A",
+  "same_wearer_confirmed": null,
+  "wear_start": "2024-01-03",
+  "wear_end": "2024-01-16",
+  "wear_days_stated": "14 天",
+  "coverage": {
+    "value": "82",
+    "unit": "%",
+    "label_in_report": "数据覆盖率",
+    "as_printed": "82%"
+  },
+  "data_quality_note": "虚构示例未描述传感器中断。",
+  "reference_only": true,
+  "disclaimer_text": "本报告仅供测试参考，不能作为调整治疗方案的依据。",
+  "identity_fields_ignored": true,
+  "mean_glucose": {
+    "value": "8.2",
+    "unit": "mmol/L",
+    "label_in_report": "平均葡萄糖（MG）",
+    "as_printed": "8.2 mmol/L"
+  },
+  "sd": {
+    "value": "2.4",
+    "unit": "mmol/L",
+    "label_in_report": "标准差（SD）",
+    "as_printed": "2.4 mmol/L"
+  },
+  "cv": {
+    "value": "29.3",
+    "unit": "%",
+    "label_in_report": "变异系数（CV）",
+    "as_printed": "29.3%"
+  },
+  "e_hba1c_or_gmi": {
+    "value": "6.6",
+    "unit": "%",
+    "label_in_report": "估算糖化血红蛋白（eHbA1c）",
+    "as_printed": "估算糖化血红蛋白 6.6%"
+  },
+  "glucose_min": {
+    "value": "3.6",
+    "unit": "mmol/L",
+    "label_in_report": "最低葡萄糖",
+    "as_printed": "3.6 mmol/L"
+  },
+  "glucose_max": {
+    "value": "13.1",
+    "unit": "mmol/L",
+    "label_in_report": "最高葡萄糖",
+    "as_printed": "13.1 mmol/L"
+  },
+  "very_low_stated": null,
+  "bands": [
+    {
+      "label": "TBR",
+      "range_low": "未写出下限",
+      "range_high": "3.9",
+      "unit": "mmol/L",
+      "percent": "2.4",
+      "duration": null
+    },
+    {
+      "label": "TIR",
+      "range_low": "3.9",
+      "range_high": "10.0",
+      "unit": "mmol/L",
+      "percent": "74.0",
+      "duration": null
+    },
+    {
+      "label": "TAR",
+      "range_low": "10.0",
+      "range_high": "未写出上限",
+      "unit": "mmol/L",
+      "percent": "23.6",
+      "duration": null
+    }
+  ],
+  "software_gauges": [
+    {
+      "name": "低血糖风险",
+      "reading": "偏高",
+      "note": "软件仪表，须单独保存。知识库未支持或与 TBR 明显不符时，不得直接说成风险高。"
+    }
+  ],
+  "time_of_day_patterns": [
+    "晚间 19:00–21:00 相对偏高（虚构报告中的图表说明）",
+    "个别日期在早餐前短暂接近下限（虚构）"
+  ],
+  "hypoglycemia_events": [],
+  "hyperglycemia_events": []
+}

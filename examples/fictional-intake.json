@@ -1,0 +1,28 @@
+{
+  "fictional": true,
+  "description": "Fictional clinical intake for pipeline demos only. Not a real patient record.",
+  "wearer_key": "fictional-wearer-A",
+  "display_label": "示例佩戴者 A（虚构）",
+  "age_years": "52",
+  "sex": "女",
+  "diabetes_type": "2 型",
+  "diabetes_duration": "约 3 年",
+  "height_cm": "160",
+  "weight_kg": "62",
+  "recent_weight_change": "近半年无明显变化",
+  "medications": [
+    {
+      "name_as_provided": "阿卡波糖",
+      "dose_as_provided": "50 mg",
+      "schedule_as_provided": "每日三次，随餐服用",
+      "notes": "虚构示例。未提供的剂量或时点不得在其他病例中套用或补全。"
+    }
+  ],
+  "comorbidities": "目前没有心血管疾病、眼底病变、肾脏病或足部问题（虚构陈述）",
+  "meal_pattern": "早餐约 7:30，以粥和一小碗蔬菜为主；午餐约 12:00，有一碗米饭和菜；晚餐约 18:30，主食量与午餐相近。加餐不固定。",
+  "activity_habit": "工作日傍晚散步约 15 分钟，强度较轻；与服药时间没有固定对应关系。",
+  "sleep_schedule": "大约 23:00 至次日 6:30",
+  "lab_hba1c": "6.8%（2024 年 1 月，虚构，化验室测定）",
+  "hypoglycemia_awareness": "偶尔有心慌，进食后可缓解；未陈述不易察觉的低血糖。",
+  "monitoring_period_events": "这段时间没有生病、饮酒或住院（虚构陈述）"
+}
