@@ -13,12 +13,16 @@ knowledge-base/
   README.md                 # 本仓库已提供的说明
   sources.example.md        # 索引模板（可复制后改名使用）
   sources.example.json      # 供程序读取的示例索引
+  watchlist.json            # 可提交的书目监测清单（没有全文）
+  watchlist.md              # 同一份清单的简短说明
   sources.md                # 你的实际索引（不要提交指南正文）
   sources.json              # 你的实际机器可读索引（可选）
   sources/                  # 你保存的全文或选读复印件（已被 .gitignore 忽略）
+  drafts/                   # 导入草稿（已被 .gitignore 忽略）
+  extracted/                # 抽出的文本（已被 .gitignore 忽略）
 ```
 
-不要把指南 PDF、OCR 全文或长摘录提交到本项目的公开仓库。
+不要把指南 PDF、OCR 全文或长摘录提交到本项目的公开仓库。导入草稿和抽出的文本也留在本机。
 
 ## 每条来源至少应记录的信息
 
@@ -48,7 +52,30 @@ knowledge-base/
 - 索引里没有的来源，不得在文稿中写成“依据某某指南”。
 - 不得把模型或个人的医学通识，标记成某条知识库来源。
 
-代码中的对应逻辑见 `src/cgm_report_advisor/knowledge.py`。第一版只读取索引并检查阅读状态，不会自动“理解”指南全文。把原文中的哪一条改写成可引用的建议条目，需要使用者自行整理，或在后续版本中再设计受约束的导入方式。
+代码中的对应逻辑见 `src/cgm_report_advisor/knowledge.py`。分析时仍然只使用索引里已经可读、且条目已被接受的内容。
+
+## 受约束的本地导入
+
+自动理解指南，在本项目里只做成一次受约束的本地导入，而不是让程序通读之后直接开处方。
+
+1. 把你有权使用的 PDF 或纯文本放进 `knowledge-base/sources/`。默认路径接受 `.txt`。PDF 抽文本依赖可选库，测试不需要版权 PDF，也不需要因此安装重依赖。
+2. 运行 `python -m cgm_report_advisor.ingest draft`。程序按章节或页码切开，写出短草稿到 `knowledge-base/drafts/`。
+3. 草稿里的 `portion_or_action` 必须是原文里已经写出的数量、时长、频率或动作，并带有较短的逐字 `source_quote` 和定位。原文没有写明的，程序不补。表格里的数字不自动变成份量。
+4. 草稿的 `review_status` 是 `pending_review`，来源仍是 `unread`。`KnowledgeBase.usable_entries()` 不会返回它们，`analyze` 和 `run_pipeline` 也不会把它们写进饮食、运动或监测建议。
+5. 你核对过阅读范围后，用 `ingest accept` 点名接受条目，并明确写成 `selected_sections_read` 或 `full_text_read`。只有这一步之后，条目才进入你的本地 `sources.json`，才可以用于建议。
+6. 若接受的是同一 `series_id` 的更新年份，程序把更旧的那一版标成 `superseded`。旧条目不再悄悄复用。冲突的说法并列留在各自的来源下，不合成一条新标准。
+
+抽出的文本在 `knowledge-base/extracted/`。`drafts/` 和 `extracted/` 都被 Git 忽略。
+
+## 书目监测
+
+跟踪新版本是监测和提醒，不是把全文自动下载进本仓库。
+
+`knowledge-base/watchlist.json` 记录系列名称、学会或出版社、主题标签、官方页面或 DOI（只保留核对过的），以及编写清单那天看到的年份。没有把握的网址和年份留空，并保留检索式。
+
+`python -m cgm_report_advisor.watch` 把这份清单和你本地索引里的年份相比较。在线模式只向 Crossref、Europe PMC 或 PubMed 要书目，不保存 PDF。离线夹具模式不访问网络。可能有更新时，报告用中文写明系列、看到的年份，以及官方获取位置。核对失败就跳过该条，不编造更新。
+
+你自己合法取得文件，放进 `sources/`，再按上一节导入和审阅。
 
 ## 与资料收集、目标值的关系
 
@@ -59,4 +86,4 @@ knowledge-base/
 
 ## 更新知识库时
 
-更换版本或增加来源后，应同步更新索引中的版本、年份和阅读状态。旧建议条目如果引用的是已经撤换的版本，不应在未核对的情况下继续输出。
+更换版本或增加来源后，应同步更新索引中的版本、年份和阅读状态。旧建议条目如果引用的是已经撤换的版本，不应在未核对的情况下继续输出。接受同一系列的更新版本时，导入程序会把更旧的来源标成 `superseded`，分析不再引用它。

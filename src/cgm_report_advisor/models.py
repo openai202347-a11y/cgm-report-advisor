@@ -225,14 +225,18 @@ class IntakeRecord:
 
 
 ReadStatus = Literal["full_text_read", "selected_sections_read", "unread"]
+ReviewStatus = Literal["accepted", "pending_review", "rejected"]
 
 
 @dataclass(frozen=True)
 class KnowledgeEntry:
-    """A short, already-curated sentence taken from a source the user has read.
+    """A short sentence taken from a source the user has read, or a pending draft.
 
-    The first version of this project does not parse guideline PDFs. Only
-    entries present in the user's index may be turned into advice.
+    Entries written by hand in an index omit ``review_status`` and are treated
+    as already accepted. Ingest drafts set ``pending_review`` and must not be
+    used for diet, activity, or monitoring advice until a person accepts them.
+    ``portion_or_action`` and ``source_quote`` stay verbatim; nothing in this
+    model fills a portion the source text did not state.
     """
 
     entry_id: str
@@ -242,6 +246,9 @@ class KnowledgeEntry:
     portion_or_action: Optional[str] = None
     applies_to: Optional[str] = None
     level2_hypoglycemia_threshold: Optional[str] = None
+    source_quote: Optional[str] = None
+    review_status: ReviewStatus = "accepted"
+    superseded: bool = False
 
 
 @dataclass(frozen=True)
@@ -258,8 +265,13 @@ class KnowledgeSource:
     notes: Optional[str] = None
     required_intake_fields: tuple[str, ...] = ()
     entries: tuple[KnowledgeEntry, ...] = ()
+    series_id: Optional[str] = None
+    superseded: bool = False
+    superseded_by: Optional[str] = None
 
     def is_usable(self) -> bool:
+        if self.superseded:
+            return False
         return self.read_status in {"full_text_read", "selected_sections_read"}
 
 

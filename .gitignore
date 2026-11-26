@@ -42,6 +42,8 @@ output/
 # User-imported guideline full texts (keep only templates in git)
 knowledge-base/sources/
 knowledge-base/fulltext/
+knowledge-base/drafts/
+knowledge-base/extracted/
 knowledge-base/*.pdf
 knowledge-base/*.PDF
 knowledge-base/*.docx
@@ -50,6 +52,8 @@ knowledge-base/*.txt
 !knowledge-base/README.md
 !knowledge-base/sources.example.md
 !knowledge-base/sources.example.json
+!knowledge-base/watchlist.json
+!knowledge-base/watchlist.md
 
 # Archives and large binaries
 *.zip

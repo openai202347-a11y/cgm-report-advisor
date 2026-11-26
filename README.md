@@ -18,6 +18,7 @@ This repository packages a reusable workflow for CGM graphic-report review: extr
 ## 不做什么
 
 - 不内置任何指南或共识全文，也不在仓库中存放大段摘录。知识库由使用者自行导入自己有权使用的文献。
+- 不把指南 PDF 自动下载进仓库。书目监测只报告可能的新版本和官方获取位置。
 - 不提供各厂商 CGM PDF 的完整自动解析。第一版请先按字段说明把报告原文整理成 JSON。
 - 知识库没有写明的用法、剂量、服药时点、食物清单、具体份量或运动处方，不会用通识补上，也不会编造。
 - 不建议患者自行改药。未提供的毫克数或时点不会猜测。
@@ -60,6 +61,41 @@ PYTHONPATH=src python3 -m unittest discover -s tests
 
 把输出写入文件时，加上 `--output path/to/draft.md`。不要把真实报告 PDF 或真实资料提交到本仓库。
 
+## 文献监测与受约束导入
+
+这两条命令是第一版流水线之外的入口，不改变 `--metrics` 仍然必填的原有用法。
+
+监测只比较书目。没有更新时会直接说明；可能有更新时，报告写明系列、年份和官方获取位置。`--fixture` 完全离线。`--live` 只查询题名和年份，不下载 PDF。
+
+```bash
+PYTHONPATH=src python3 -m cgm_report_advisor.watch \
+  --watchlist knowledge-base/watchlist.json \
+  --index knowledge-base/sources.json \
+  --fixture path/to/fixture.json
+
+PYTHONPATH=src python3 -m cgm_report_advisor.watch \
+  --watchlist knowledge-base/watchlist.json \
+  --index knowledge-base/sources.json \
+  --live
+```
+
+导入只根据你已经放在本地的文本生成**待审**草稿。原文没有写明的份量不会被补上。接受之前，草稿不能进入饮食、运动或监测建议。
+
+```bash
+PYTHONPATH=src python3 -m cgm_report_advisor.ingest draft \
+  --file knowledge-base/sources/your-file.txt \
+  --source-id your-id \
+  --title "文献名称"
+
+PYTHONPATH=src python3 -m cgm_report_advisor.ingest accept \
+  --draft knowledge-base/drafts/your-id.json \
+  --index knowledge-base/sources.json \
+  --read-status selected_sections_read \
+  --entry-id your-id-001
+```
+
+`knowledge-base/sources/`、`knowledge-base/drafts/` 和 `knowledge-base/extracted/` 都被 Git 忽略。`watchlist.json` 可以提交，里面只有系列书目。说明见 [docs/knowledge-base.md](docs/knowledge-base.md) 和 [docs/roadmap.md](docs/roadmap.md)。
+
 使用自己的知识库前，请先阅读 [docs/knowledge-base.md](docs/knowledge-base.md)，复制索引模板并如实填写阅读状态。未读全文的文献不得当作已经掌握。
 
 ## 标准流程
@@ -87,9 +123,9 @@ PYTHONPATH=src python3 -m unittest discover -s tests
 ## 仓库里有什么
 
 - `docs/`：流程、资料收集、报告字段、建议与配图、知识库导入和路线图。
-- `knowledge-base/`：说明和示例索引模板。不要把指南正文放进来。
+- `knowledge-base/`：说明、示例索引模板，以及可提交的书目监测清单。不要把指南正文、导入草稿或抽出的文本放进来。
 - `examples/`：虚构的资料和指标，仅供演示。
-- `src/cgm_report_advisor/`：流水线骨架，模块包括 `extract_report`、`intake`、`analyze`、`illustrate`、`render_report`。
+- `src/cgm_report_advisor/`：流水线骨架，模块包括 `extract_report`、`intake`、`analyze`、`illustrate`、`render_report`，以及分开的 `watch` 与 `ingest`。
 - `tests/`：针对“缺资料则不输出饮食运动处方”“禁止编造份量”等规则的测试。
 
 ## 免责声明
