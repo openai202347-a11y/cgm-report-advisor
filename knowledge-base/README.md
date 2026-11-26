@@ -2,7 +2,9 @@
 
 这个目录用来放置**你自己的**指南或共识索引，以及你在本地保存的原文。本仓库只提供说明和示例索引模板，不提供任何指南正文，也不提供大段摘录。
 
-请不要把受版权保护的全文、OCR 文本或长摘录提交到公开仓库。`.gitignore` 已经忽略 `knowledge-base/sources/`、常见公文文件以及本目录下除说明和示例模板以外的 `.txt` 文件。
+请不要把受版权保护的全文、OCR 文本或长摘录提交到公开仓库。`.gitignore` 已经忽略 `knowledge-base/sources/`、`knowledge-base/drafts/`、`knowledge-base/extracted/`、常见公文文件，以及本目录下除说明和示例模板以外的 `.txt` 文件。
+
+`watchlist.json` 和 `watchlist.md` 是可以提交的书目清单，只有系列名称、机构和已核对的链接或年份，没有指南正文。导入产生的草稿和抽出的文本留在本机。
 
 开始使用时：
 

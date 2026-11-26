@@ -120,6 +120,15 @@ def _build_sections(reports: list[ExtractedReport], knowledge: KnowledgeBase) ->
                 [f"下列来源的阅读状态为未读，本次没有当作已掌握，也没有用来确定目标或建议：{names}。"],
             )
         )
+    superseded = knowledge.superseded_sources()
+    if superseded:
+        names = "、".join(source.title for source in superseded)
+        sections.append(
+            InterpretationSection(
+                "已撤换的知识库来源",
+                [f"下列来源已标记为被更新版本替代，本次没有继续引用：{names}。"],
+            )
+        )
     return sections
 
 

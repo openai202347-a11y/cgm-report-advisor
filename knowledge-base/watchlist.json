@@ -1,0 +1,233 @@
+{
+  "description": "Bibliographic watchlist only. Series names, societies, search queries, and links or years that were checked on as_of. No abstracts, tables, or guideline excerpts. A newer edition is not downloaded by this repository.",
+  "as_of": "2026-11-26",
+  "rules": [
+    "official_url 只保留当天成功打开、并且页面上能看到系列名称的地址。",
+    "doi 只保留 Crossref 或 Europe PMC 书目接口当天返回的记录。打不开的解析地址不写入。",
+    "last_seen 是该日的书目观察，不是程序宣布的现行标准。",
+    "不收录 PDF、网盘或全文文件地址。"
+  ],
+  "series": [
+    {
+      "series_id": "cds-t2dm-guideline",
+      "title": "中国2型糖尿病防治指南",
+      "publisher_or_society": "中华医学会糖尿病学分会",
+      "topic_tags": ["diabetes-care", "diet", "exercise"],
+      "official_url": "https://diab.cma.org.cn/cn/ncontent.aspx?oid=3041",
+      "society_list_url": "https://diab.cma.org.cn/cn/zhinangongshi.aspx",
+      "doi": null,
+      "suggested_query": "中国2型糖尿病防治指南 中华医学会糖尿病学分会",
+      "last_seen": {
+        "version_label": "2020年版",
+        "year": 2020,
+        "observed_from": "中华医学会糖尿病学分会该条页面，以及同日的指南列表",
+        "observed_url": "https://diab.cma.org.cn/cn/ncontent.aspx?oid=3041",
+        "as_of": "2026-11-26"
+      },
+      "notes": "指南列表另列有名称不同的《中国糖尿病防治指南（2024版）》，不自动视为本系列新版。列表上的全文文件地址未写入。"
+    },
+    {
+      "series_id": "cds-diabetes-guideline",
+      "title": "中国糖尿病防治指南",
+      "publisher_or_society": "中华医学会糖尿病学分会",
+      "topic_tags": ["diabetes-care"],
+      "official_url": "https://diab.cma.org.cn/cn/zhinangongshi.aspx",
+      "doi": null,
+      "suggested_query": "中国糖尿病防治指南 中华医学会糖尿病学分会",
+      "last_seen": {
+        "version_label": "2024版",
+        "year": 2024,
+        "observed_from": "中华医学会糖尿病学分会指南列表页上的标题",
+        "observed_url": "https://diab.cma.org.cn/cn/zhinangongshi.aspx",
+        "as_of": "2026-11-26"
+      },
+      "notes": "与《中国2型糖尿病防治指南》分列。本清单不收录全文文件地址。"
+    },
+    {
+      "series_id": "cds-glucose-monitoring-guideline",
+      "title": "中国血糖监测临床应用指南",
+      "publisher_or_society": "中华医学会糖尿病学分会",
+      "topic_tags": ["cgm", "diabetes-care"],
+      "official_url": "https://diab.cma.org.cn/cn/zhinangongshi.aspx",
+      "doi": null,
+      "suggested_query": "中国血糖监测临床应用指南 中华医学会糖尿病学分会",
+      "last_seen": {
+        "version_label": "2021年版",
+        "year": 2021,
+        "observed_from": "中华医学会糖尿病学分会指南列表页上的标题",
+        "observed_url": "https://diab.cma.org.cn/cn/zhinangongshi.aspx",
+        "as_of": "2026-11-26"
+      },
+      "notes": "列表项的外链当天未再打开，因此官方地址只用指南列表页。该列表没有单列《中国持续葡萄糖监测临床应用指南》的更新版。"
+    },
+    {
+      "series_id": "cds-cgm-clinical-guideline",
+      "title": "中国持续葡萄糖监测临床应用指南",
+      "publisher_or_society": "中华医学会糖尿病学分会",
+      "topic_tags": ["cgm"],
+      "official_url": null,
+      "doi": null,
+      "suggested_query": "中国持续葡萄糖监测临床应用指南 中华医学会糖尿病学分会",
+      "last_seen": null,
+      "notes": "2026-11-26 的学会指南列表没有这一标题，因此不记年份，也不记网址。"
+    },
+    {
+      "series_id": "primary-care-cgm-consensus",
+      "title": "持续葡萄糖监测基层临床应用专家共识",
+      "publisher_or_society": "题录期刊字段为中华全科医师杂志",
+      "topic_tags": ["cgm", "diabetes-care"],
+      "official_url": null,
+      "bibliographic_record_url": "https://www.sinomed.ac.cn/article.do?ui=2025560275",
+      "doi": null,
+      "suggested_query": "持续葡萄糖监测基层临床应用专家共识 中华全科医师杂志",
+      "last_seen": {
+        "version_label": "2025年",
+        "year": 2025,
+        "observed_from": "中国生物医学文献服务系统题录",
+        "observed_url": "https://www.sinomed.ac.cn/article.do?ui=2025560275",
+        "as_of": "2026-11-26"
+      },
+      "notes": "这是题录，不是出版社全文页。未核到可解析的 DOI。全文请向《中华全科医师杂志》官方渠道索取。"
+    },
+    {
+      "series_id": "icgm-clinical-consensus",
+      "title": "集成式持续葡萄糖监测（iCGM）临床应用专家共识",
+      "publisher_or_society": null,
+      "topic_tags": ["cgm"],
+      "official_url": null,
+      "doi": null,
+      "suggested_query": "集成式持续葡萄糖监测 iCGM 临床应用专家共识",
+      "last_seen": null,
+      "notes": "2026-11-26 未能打开可核对的官方页面或 Crossref 记录，因此不记年份和网址。这里只保留检索式。"
+    },
+    {
+      "series_id": "t2dm-exercise-guideline",
+      "title": "中国2型糖尿病运动治疗指南",
+      "publisher_or_society": "国家老年医学中心、中华医学会糖尿病学分会、中国体育科学学会",
+      "topic_tags": ["exercise", "diabetes-care"],
+      "official_url": "https://www.chinagp.net/CN/Y2024/V27/I30/3709",
+      "container": "中国全科医学",
+      "doi": null,
+      "suggested_query": "中国2型糖尿病运动治疗指南",
+      "last_seen": {
+        "version_label": "2024版",
+        "year": 2024,
+        "observed_from": "《中国全科医学》题录页的题名与出版日期字段",
+        "observed_url": "https://www.chinagp.net/CN/Y2024/V27/I30/3709",
+        "as_of": "2026-11-26"
+      },
+      "notes": "题录页可见上述三家机构名称。页面上的 DOI 当天在 Crossref 返回 404，故留空。卷期字段为 2024 年第 27 卷第 30 期。"
+    },
+    {
+      "series_id": "primary-care-diabetes-guideline",
+      "title": "国家基层糖尿病防治管理指南",
+      "publisher_or_society": "基本公共卫生服务项目基层糖尿病防治管理办公室；中华医学会糖尿病学分会",
+      "topic_tags": ["diabetes-care"],
+      "official_url": "https://cs.medjournals.cn/article/doi/full/10.3760/cma.j.cn112138-20250924-00572",
+      "society_list_url": "https://diab.cma.org.cn/cn/zhinangongshi.aspx",
+      "earlier_listing_url": "https://diab.cma.org.cn/cn/ncontent.aspx?oid=3021",
+      "container": "中华内科杂志",
+      "doi": null,
+      "suggested_query": "国家基层糖尿病防治管理指南",
+      "last_seen": {
+        "version_label": "2025",
+        "year": 2025,
+        "observed_from": "《中华内科杂志》题录页的题名与出版日期字段",
+        "observed_url": "https://cs.medjournals.cn/article/doi/full/10.3760/cma.j.cn112138-20250924-00572",
+        "as_of": "2026-11-26"
+      },
+      "notes": "题录页为 2025 版，日期字段 2025-12-01，第 64 卷第 12 期。同日学会列表和 oid=3021 仍写（2022）。两处并列，不合并。页面 DOI 在 Crossref 返回 404，故留空。"
+    },
+    {
+      "series_id": "elderly-t2dm-guideline",
+      "title": "中国老年2型糖尿病防治临床指南",
+      "publisher_or_society": "中国老年2型糖尿病防治临床指南编写组；中国老年医学学会老年内分泌代谢分会；中国老年保健医学研究会老年内分泌与代谢分会；北京医学奖励基金会老年医学专业委员会；健康中国研究中心糖尿病防治及管理专家委员会；国家老年疾病临床医学研究中心（解放军总医院）",
+      "topic_tags": ["diabetes-care"],
+      "official_url": "https://cs.medjournals.cn/article/doi/full/10.3760/cma.j.cn112138-20251123-00713",
+      "container": "中华内科杂志",
+      "doi": null,
+      "suggested_query": "中国老年2型糖尿病防治临床指南",
+      "last_seen": {
+        "version_label": "2026年版",
+        "year": 2026,
+        "observed_from": "《中华内科杂志》题录页的题名、作者机构和出版日期字段",
+        "observed_url": "https://cs.medjournals.cn/article/doi/full/10.3760/cma.j.cn112138-20251123-00713",
+        "as_of": "2026-11-26"
+      },
+      "notes": "日期字段为 2026-03-01，第 65 卷第 3 期。页面 DOI 在 Crossref 返回 404，故留空。机构名称来自题录作者字段，不是正文摘录。"
+    },
+    {
+      "series_id": "cds-t1dm-guideline",
+      "title": "中国1型糖尿病诊治指南",
+      "publisher_or_society": "中华医学会糖尿病学分会",
+      "topic_tags": ["diabetes-care"],
+      "official_url": "https://diab.cma.org.cn/cn/ncontent.aspx?oid=3014",
+      "society_list_url": "https://diab.cma.org.cn/cn/zhinangongshi.aspx",
+      "doi": null,
+      "suggested_query": "中国1型糖尿病诊治指南 中华医学会糖尿病学分会",
+      "last_seen": {
+        "version_label": "2021版",
+        "year": 2021,
+        "observed_from": "中华医学会糖尿病学分会该条页面",
+        "observed_url": "https://diab.cma.org.cn/cn/ncontent.aspx?oid=3014",
+        "as_of": "2026-11-26"
+      },
+      "notes": "不收录指南列表中的全文文件地址。"
+    },
+    {
+      "series_id": "chinese-dietary-guidelines",
+      "title": "中国居民膳食指南",
+      "publisher_or_society": "中国营养学会",
+      "topic_tags": ["diet"],
+      "official_url": "http://dg.cnsoc.org/",
+      "doi": null,
+      "suggested_query": "中国居民膳食指南 中国营养学会",
+      "last_seen": {
+        "version_label": "2022",
+        "year": 2022,
+        "observed_from": "中国营养学会膳食指南站点首页上的已发布版本名称",
+        "observed_url": "http://dg.cnsoc.org/",
+        "as_of": "2026-11-26"
+      },
+      "notes": "当天首页仍以 2022 版为已发布版本。同页有 2026 年修订工作会议消息，不能据此写成已有新版。该主机的 https 证书与主机名不符，故只保留 http。"
+    },
+    {
+      "series_id": "ada-standards-of-care",
+      "title": "Standards of Care in Diabetes",
+      "publisher_or_society": "American Diabetes Association",
+      "topic_tags": ["diabetes-care", "cgm", "diet", "exercise"],
+      "official_url": "https://professional.diabetes.org/standards-of-care",
+      "doi": "10.2337/dc26-SINT",
+      "container": "Diabetes Care",
+      "suggested_query": "Standards of Care in Diabetes American Diabetes Association",
+      "last_seen": {
+        "version_label": "2026",
+        "year": 2026,
+        "observed_from": "ADA 专业页面上的 2026 Standards of Care，以及 Crossref 题名 Standards of Care in Diabetes—2026",
+        "observed_url": "https://professional.diabetes.org/standards-of-care",
+        "as_of": "2026-11-26"
+      },
+      "notes": "年度系列。Crossref 中该 DOI 的 issued 日期为 2025-12-08，与题名中的 2026 版不是同一个数字。doi.org 当天返回 403，故不写解析网址。"
+    },
+    {
+      "series_id": "international-consensus-time-in-range",
+      "title": "International Consensus on Time in Range",
+      "bibliographic_title": "Clinical Targets for Continuous Glucose Monitoring Data Interpretation: Recommendations From the International Consensus on Time in Range",
+      "publisher_or_society": "American Diabetes Association",
+      "authors_short": "Battelino et al.",
+      "topic_tags": ["cgm"],
+      "official_url": null,
+      "doi": "10.2337/dci19-0028",
+      "container": "Diabetes Care",
+      "suggested_query": "International Consensus on Time in Range Battelino",
+      "last_seen": {
+        "version_label": "2019",
+        "year": 2019,
+        "observed_from": "Crossref works API 与 Europe PMC 检索 API",
+        "observed_url": null,
+        "as_of": "2026-11-26"
+      },
+      "notes": "两处书目接口都返回该 DOI、期刊 Diabetes Care 和 2019 年；Europe PMC 作者字段以 Battelino 起首。doi.org 与 Europe PMC 文章页返回 403，故不写网址。"
+    }
+  ]
+}
