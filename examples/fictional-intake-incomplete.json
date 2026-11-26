@@ -1,0 +1,18 @@
+{
+  "fictional": true,
+  "description": "Fictional incomplete intake used by tests. Not a real patient record.",
+  "wearer_key": "fictional-wearer-A",
+  "display_label": "示例佩戴者 A（虚构）",
+  "diabetes_type": "2 型",
+  "diabetes_duration": "约 3 年",
+  "height_cm": "160",
+  "weight_kg": "62",
+  "medications": [
+    {
+      "name_as_provided": "阿卡波糖",
+      "dose_as_provided": "50 mg",
+      "schedule_as_provided": "每日三次，随餐服用"
+    }
+  ],
+  "comorbidities": "目前没有心血管疾病、眼底病变、肾脏病或足部问题（虚构陈述）"
+}

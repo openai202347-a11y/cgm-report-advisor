@@ -1,0 +1,6 @@
+# Runtime dependencies are intentionally empty in this first version.
+# The skeleton uses only the Python 3.10+ standard library.
+#
+# Optional tools for local development (install separately if you need them):
+#   pytest
+#   ruff

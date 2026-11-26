@@ -1,0 +1,77 @@
+{
+  "description": "Fictional knowledge-base index for format demonstration only. Do not use these sources for real clinical advice. Replace with your own index after you have obtained and read the documents you are entitled to use.",
+  "fictional": true,
+  "sources": [
+    {
+      "id": "ex-2020-diet",
+      "title": "示例饮食份量说明（虚构）",
+      "version": "第 1 版",
+      "year": 2020,
+      "publisher_or_society": "示例编写组（虚构）",
+      "scope": "full_text",
+      "read_status": "full_text_read",
+      "path": "knowledge-base/sources/ex-2020-diet.pdf",
+      "applies_to": "成年 2 型糖尿病门诊患者（虚构设定）",
+      "notes": "演示用。",
+      "required_intake_fields": [
+        "diabetes_type",
+        "medications",
+        "height_cm",
+        "weight_kg",
+        "comorbidities",
+        "meal_pattern"
+      ],
+      "demo_entries": [
+        {
+          "entry_id": "diet-fruit-half-apple",
+          "kind": "diet",
+          "locator": "示例条目 4.2（虚构）",
+          "text": "若需以水果作为加餐示例，每日可食半个中等大小的苹果。",
+          "portion_or_action": "每日半个中等大小的苹果",
+          "applies_to": "成年 2 型糖尿病门诊患者（虚构设定）"
+        }
+      ]
+    },
+    {
+      "id": "ex-2021-activity",
+      "title": "示例身体活动说明（虚构）",
+      "version": "第 1 版",
+      "year": 2021,
+      "publisher_or_society": "示例编写组（虚构）",
+      "scope": "第 3 章",
+      "read_status": "selected_sections_read",
+      "path": "knowledge-base/sources/ex-2021-activity.pdf",
+      "applies_to": "无增殖性视网膜病变、无严重心血管禁忌的成年 2 型糖尿病患者（虚构设定）",
+      "notes": "仅允许引用已读的第 3 章。",
+      "required_intake_fields": [
+        "diabetes_type",
+        "comorbidities",
+        "activity_habit"
+      ],
+      "demo_entries": [
+        {
+          "entry_id": "activity-postprandial-walk-20min",
+          "kind": "activity",
+          "locator": "第 3 章示例条目（虚构）",
+          "text": "可在餐后进行约 20 分钟中等强度步行。",
+          "portion_or_action": "餐后约 20 分钟中等强度步行",
+          "applies_to": "无增殖性视网膜病变、无严重心血管禁忌的成年 2 型糖尿病患者（虚构设定）"
+        }
+      ]
+    },
+    {
+      "id": "ex-unread-placeholder",
+      "title": "一条尚未阅读的占位文献（虚构）",
+      "version": null,
+      "year": 2018,
+      "publisher_or_society": null,
+      "scope": "unknown",
+      "read_status": "unread",
+      "path": null,
+      "applies_to": null,
+      "notes": "未读来源不得作为建议依据。",
+      "required_intake_fields": [],
+      "demo_entries": []
+    }
+  ]
+}

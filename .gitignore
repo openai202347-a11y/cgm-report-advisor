@@ -1,0 +1,63 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.egg-info/
+.eggs/
+*.egg
+.venv/
+venv/
+env/
+.python-version
+
+# Testing and coverage
+.pytest_cache/
+.coverage
+.coverage.*
+htmlcov/
+.tox/
+.mypy_cache/
+.ruff_cache/
+
+# Environment and secrets
+.env
+.env.*
+!.env.example
+
+# Editors and OS
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+*.swp
+
+# User-supplied clinical data and CGM reports
+data/
+reports/
+input/
+output/
+*.pdf
+*.PDF
+
+# User-imported guideline full texts (keep only templates in git)
+knowledge-base/sources/
+knowledge-base/fulltext/
+knowledge-base/*.pdf
+knowledge-base/*.PDF
+knowledge-base/*.docx
+knowledge-base/*.doc
+knowledge-base/*.txt
+!knowledge-base/README.md
+!knowledge-base/sources.example.md
+!knowledge-base/sources.example.json
+
+# Archives and large binaries
+*.zip
+*.tar
+*.tar.gz
+*.7z
+
+# Local build artifacts
+build/
+dist/
+*.whl
